@@ -12,20 +12,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from toco device
 $(call inherit-product, device/xiaomi/toco/device.mk)
 
+# Inherit MiuiCamera if exist
+$(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-## risingOS-Flags
-
-# Addons
 TARGET_HAS_UDFPS := true
-
-# Gms 
-WITH_GMS := true
-
-# rising Maintainer
-RISING_MAINTAINER=fwlhh
-
 PRODUCT_NAME := lineage_toco
 PRODUCT_DEVICE := toco
 PRODUCT_BRAND := Xiaomi
@@ -35,7 +28,5 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="toco-user 12 RKQ1.210614.002 V13.0.4.0.SFNMIXM release-keys" \
-    BuildFingerprint=Xiaomi/toco_global/toco:12/RKQ1.210614.002/V13.0.4.0.SFNMIXM:user/release-keys \
-    RisingMaintainer="fwlhh" \
-    RisingChipset="SD 730G"
+    BuildDesc="toco-user 12 RKQ1.210614.002 V13.0.6.0.SFNEUXM release-keys" \
+    BuildFingerprint=Xiaomi/toco_eea/toco:12/RKQ1.210614.002/V13.0.6.0.SFNEUXM:user/release-keys

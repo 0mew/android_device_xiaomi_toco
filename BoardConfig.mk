@@ -7,10 +7,10 @@
 # Inherit from sm6150-common
 include device/xiaomi/sm6150-common/BoardConfigCommon.mk
 
-# Inherit from proprietary files for miuicamera
--include vendor/xiaomi/toco-miuicamera/products/board.mk
-
 DEVICE_PATH := device/xiaomi/toco
+
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Audio
 TARGET_PROVIDES_AUDIO_EXTNS := true
