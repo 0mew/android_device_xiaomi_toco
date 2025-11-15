@@ -9,6 +9,9 @@ include device/xiaomi/sm6150-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/toco
 
+# MiuiCamera
+-include device/xiaomi/miuicamera-toco/BoardConfig.mk
+
 # Audio
 TARGET_PROVIDES_AUDIO_EXTNS := true
 
@@ -34,7 +37,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_SCREEN_DENSITY := 440
 
 # Udfps
-TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 TARGET_USES_FOD_ZPOS := true
 
 # Verified boot
