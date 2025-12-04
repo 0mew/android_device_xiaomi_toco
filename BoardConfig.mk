@@ -11,6 +11,7 @@ DEVICE_PATH := device/xiaomi/toco
 
 # MiuiCamera
 -include device/xiaomi/miuicamera-toco/BoardConfig.mk
+TARGET_CAMERA_SERVICE_EXT_LIB := //$(DEVICE_PATH):libcameraservice_extension.sm6150
 
 # Audio
 TARGET_PROVIDES_AUDIO_EXTNS := true
@@ -48,6 +49,10 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Security
 VENDOR_SECURITY_PATCH := 2023-01-01
+
+# SEPolicy - Vendor Rules (Ömer)
+BOARD_VENDOR_SEPOLICY_DIRS += device/xiaomi/toco/sepolicy/vendor
+
 
 # Inherit from proprietary files
 include vendor/xiaomi/toco/BoardConfigVendor.mk
