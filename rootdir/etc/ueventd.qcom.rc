@@ -1,15 +1,8 @@
-# Toco Dual Flashlight & Switch Control (Ömer)
-# Format: <dosya_yolu> <dosya_adi> <izinler> <kullanici> <grup>
+# Dosya Yolu                                İzin    Sahip   Grup
+/sys/class/leds/led:torch_0/brightness      0660    system  system
+/sys/class/leds/led:torch_0/max_brightness  0660    system  system
 
-# 1. Ana Tetikleyici (Switch 0) - Orijinalindeki switch_2 yerine switch_0 kullanıldı
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:switch_0 brightness 0666 system system
+/sys/class/leds/led:torch_1/brightness      0660    system  system
+/sys/class/leds/led:torch_1/max_brightness  0660    system  system
 
-# 2. Sarı LED Grubu (Torch 0)
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_0 brightness 0666 system system
-
-# 3. Beyaz LED Grubu (Torch 1)
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_1 brightness 0666 system system
-
-# (Opsiyonel) Eğer switch_1 ve switch_2 de varsa garanti olsun diye ekleyebilirsin:
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:switch_1 brightness 0666 system system
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:switch_2 brightness 0666 system system
+/sys/class/leds/led:switch_0/brightness     0660    system  system

@@ -13,6 +13,12 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # MiuiCamera
 $(call inherit-product-if-exists, device/xiaomi/miuicamera-toco/device.mk)
 
+# LED İzinleri (Init Script)
+PRODUCT_COPY_FILES += \
+    device/xiaomi/toco/init.toco_leds.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.toco_leds.rc
+
+    
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \

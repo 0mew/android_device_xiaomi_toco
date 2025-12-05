@@ -1,0 +1,18 @@
+on boot
+    # --- Toco LED & Fener İzinleri (Ömer) ---
+    
+    # 1. Sarı LED Grubu (Torch 0)
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_0/max_brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/max_brightness
+
+    # 2. Beyaz LED Grubu (Torch 1) - Yanmayan diğer ikili
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:torch_1/max_brightness
+    chmod 0660 /sys/class/leds/led:torch_1/brightness
+    chmod 0660 /sys/class/leds/led:torch_1/max_brightness
+
+    # 3. Anahtar (Switch)
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chmod 0660 /sys/class/leds/led:switch_0/brightness
