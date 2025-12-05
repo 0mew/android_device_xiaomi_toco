@@ -1,8 +1,0 @@
-# Dosya Yolu                                İzin    Sahip   Grup
-/sys/class/leds/led:torch_0/brightness      0660    system  system
-/sys/class/leds/led:torch_0/max_brightness  0660    system  system
-
-/sys/class/leds/led:torch_1/brightness      0660    system  system
-/sys/class/leds/led:torch_1/max_brightness  0660    system  system
-
-/sys/class/leds/led:switch_0/brightness     0660    system  system
