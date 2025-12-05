@@ -1,18 +1,27 @@
 on boot
-    # --- Toco LED & Fener İzinleri (Ömer) ---
+    # --- Toco LED & Fener Yapılandırması (Ömer) ---
     
-    # 1. Sarı LED Grubu (Torch 0)
+    # 1. LED'lerin Maksimum Parlaklıklarını Tanımla
+    # Sistem bazen bunları 0 olarak başlatır, biz 255 (Max) olduğunu zorla öğretiyoruz.
+    write /sys/class/leds/led:torch_0/max_brightness 255
+    write /sys/class/leds/led:torch_1/max_brightness 255
+    write /sys/class/leds/led:switch_0/max_brightness 255
+
+    # 2. İzinleri Ayarla (Daha önce yaptıklarımız)
     chown system system /sys/class/leds/led:torch_0/brightness
     chown system system /sys/class/leds/led:torch_0/max_brightness
     chmod 0660 /sys/class/leds/led:torch_0/brightness
     chmod 0660 /sys/class/leds/led:torch_0/max_brightness
 
-    # 2. Beyaz LED Grubu (Torch 1) - Yanmayan diğer ikili
     chown system system /sys/class/leds/led:torch_1/brightness
     chown system system /sys/class/leds/led:torch_1/max_brightness
     chmod 0660 /sys/class/leds/led:torch_1/brightness
     chmod 0660 /sys/class/leds/led:torch_1/max_brightness
 
-    # 3. Anahtar (Switch)
     chown system system /sys/class/leds/led:switch_0/brightness
     chmod 0660 /sys/class/leds/led:switch_0/brightness
+
+    # 3. KÖPRÜYÜ KUR (Dual LED Hilesi)
+    # switch_0 bazı kernel'larda "Dual Mode" anahtarıdır.
+    # Bunu başlangıçta tetiklemek, torch_0 yandığında torch_1'in de uyanmasını sağlayabilir.
+    write /sys/class/leds/led:switch_0/brightness 255
